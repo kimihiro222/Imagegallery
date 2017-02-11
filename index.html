@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>Kimihiro Ohnoのポートフォリオ</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="stylesheet" type="text/css" href="css/jquery.multiscroll.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+<![endif]-->
+
+</head>
+<body>
+
+<div id="wrapper">
+	<nav>
+		<ul>
+			<li data-menuanchor="first" class="active"><a href="#first">ABOUT</a></li>
+			<li data-menuanchor="second"><a href="#second">WORKS</a></li>
+			<li data-menuanchor="third"><a href="#third">CONTACT</a></li>
+		</ul>
+	</nav>
+	<div id="multiscroll">
+		<div class="ms-left">
+			<div class="ms-section lead">ABOUT</div>
+			<div class="ms-section contents">coming soon...</div>
+			<div class="ms-section lead">CONTACT</div>
+		</div>
+		<div class="ms-right">
+			<div class="ms-section contents">
+				<p>私の名前はKimihiroです。フロントエンジニアをしています。</p>
+				<table>
+					<tr>
+						<th>name</th>
+						<td>Kimihiro Ohno</td>
+					</tr>
+					<tr>
+						<th>age</th>
+						<td>secret</td>
+					</tr>
+					<tr>
+						<th>gender</th>
+						<td>secret</td>
+					</tr>
+				</table>
+			</div>
+			<div class="ms-section lead">WORKS</div>
+			<div class="ms-section contents">coming soon...</div>
+		</div>
+	</div>
+</div><!--wrapper-->
+<!--スクリプト-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/jquery.multiscroll.min.js"></script>
+<script src="js/jquery.easings.min.js"></script>
+<script>
+//マルチスクリプト
+$(document).ready(function() {
+	$('#multiscroll').multiscroll({
+		anchors: ['first','second','third'], // アンカーリンクの設定
+		menu: 'nav', // メニューの親要素
+		paddingTop: 50, // 固定ヘッダー分の上paddingを取ることが出来ます。
+		paddingBottom: 0 // 固定フッター分の下paddingを取ることが出来ます。
+	});
+});
+</script>
+
+</body>
+</html>

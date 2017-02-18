@@ -25,8 +25,7 @@ gulp.task("sass", function() {
 });
 
 
-
-
+//ファイル監視
 gulp.task('default', ['browser-sync'], function () {
 	gulp.watch("./**/*.scss", ['sass']);
 	gulp.watch("./**/*.css", ['bs-reload']);

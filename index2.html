@@ -16,47 +16,26 @@
 
 </head>
 <body>
-<div id="slide">
-	<img src="img/img1.jpg">
-	<img src="img/img2.jpg">
-	<img src="img/img3.jpg">
+<div class="wrapper">
+	<div class="main"><img src="img/img1.jpg" id="mainPhoto"></div>
+	<ul>
+		 <li><img src="img/img1.jpg" class="changePhoto"></li>
+		 <li><img src="img/img2.jpg" class="changePhoto"></li>
+		 <li><img src="img/img3.jpg" class="changePhoto"></li>
+	 </ul>
 </div>
 
 <!--スクリプト-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(function() {
-	var page=0;
-
-	var lastPage = parseInt($('#slide img').length-1);
-
-	$('#slide img').css('display','none');
-
-	$('#slide img').eq(page).css('display','block');
-
-	function changePage() {
-		$('#slide img').fadeOut(1000);
-		$('#slide img').eq(page).fadeIn(1000);
-	};
-
-	var Timer;
-	function startTimer() {
-		Timer = setInterval(function() {
-			if(page === lastPage) {
-				page = 0;
-				changePage();
-			} else {
-				page ++;
-				changePage();
-			};
-		},5000);
-	}
-
-	function stopTimer() {
-		clearInterval(Timer);
-	}
-
-	startTimer();
+	$('img.changePhoto').click(function() {
+		var ImgSrc = $(this).attr('src');
+		$('img#mainPhoto').attr({src : ImgSrc});
+		$('img#mainPhoto').hide();
+		$('img#mainPhoto').fadeIn('slow');
+		return false;
+	});
 });
 </script>
 </body>
